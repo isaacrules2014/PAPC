@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Rigs | Custom Gaming PC Builder & Storefront</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0b10',
+                            800: '#12141c',
+                            700: '#1b1e2b',
+                            600: '#272b3c'
+                        },
+                        neon: {
+                            cyan: '#00f0ff',
+                            purple: '#b000ff',
+                            pink: '#ff007f',
+                            green: '#00ff66'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter & Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.15), inset 0 0 15px rgba(0, 240, 255, 0.05);
+        }
+        .neon-border-purple {
+            box-shadow: 0 0 15px rgba(176, 0, 255, 0.15), inset 0 0 15px rgba(176, 0, 255, 0.05);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0b10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #272b3c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-100 min-h-screen selection:bg-neon-cyan selection:text-dark-900">
+
+    <header class="sticky top-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neon-cyan to-neon-purple flex items-center justify-center neon-border">
+                    <i class="fa-solid fa-microchip text-dark-900 text-xl font-bold"></i>
+                </div>
+                <span class="font-orbitron text-2xl font-black tracking-wider bg-gradient-to-r from-neon-cyan via-white to-neon-purple bg-clip-text text-transparent">
+                    APEX RIGS
+                </span>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#hero" class="hover:text-neon-cyan transition-colors">Home</a>
+                <a href="#configurator" class="hover:text-neon-cyan transition-colors">PC Configurator</a>
+                <a href="#gallery" class="hover:text-neon-cyan transition-colors">Past Builds</a>
+                <a href="#process" class="hover:text-neon-cyan transition-colors">Our Process</a>
+                <a href="#faq" class="hover:text-neon-cyan transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#configurator" class="bg-gradient-to-r from-neon-cyan to-blue-600 text-dark-900 font-bold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-neon-cyan/50 hover:scale-105 transition-all duration-300">
+                    <i class="fa-solid fa-screwdriver-wrench mr-2"></i>Build Yours
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 border-b border-dark-700">
+        <!-- Background Glow FX -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-neon-cyan/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[300px] bg-neon-purple/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-dark-800 border border-dark-600 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-neon-cyan">
+                        <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+                        <span>Hand-Crafted Custom Gaming Rigs</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-orbitron font-black tracking-tight leading-none">
+                        ENGINEERED FOR <span class="bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent neon-glow">MAXIMUM FPS</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+                        Zero bloatware. Meticulous cable management. Rigorous 24-hour stress testing. Built by passionate hardware enthusiasts for peak performance and jaw-dropping aesthetics.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-5">
+                        <a href="#configurator" class="w-full sm:w-auto text-center bg-gradient-to-r from-neon-cyan to-blue-600 text-dark-900 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-neon-cyan/50 hover:scale-105 transition-all text-base">
+                            Launch Custom Configurator
+                        </a>
+                        <a href="#gallery" class="w-full sm:w-auto text-center bg-dark-800 border border-dark-600 hover:border-neon-purple text-gray-200 font-bold px-8 py-4 rounded-xl transition-all text-base">
+                            View Showroom
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-dark-700/60 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="font-orbitron font-bold text-2xl text-neon-cyan">100%</div>
+                            <div class="text-xs text-gray-400">Stress Tested</div>
+                        </div>
+                        <div>
+                            <div class="font-orbitron font-bold text-2xl text-neon-purple">3-Year</div>
+                            <div class="text-xs text-gray-400">Labor Warranty</div>
+                        </div>
+                        <div>
+                            <div class="font-orbitron font-bold text-2xl text-neon-green">Clean</div>
+                            <div class="text-xs text-gray-400">Cable Routing</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="relative bg-dark-800 border border-dark-600 rounded-3xl p-4 neon-border shadow-2xl">
+                        <div class="absolute -top-3 -right-3 bg-neon-purple text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                            FEATURED BUILD
+                        </div>
+                        <img src="https://placehold.co/600x600/12141c/00f0ff?text=Apex+Titanium+Rig" alt="Custom Gaming PC" class="rounded-2xl w-full h-auto object-cover aspect-square">
+                        <div class="mt-4 p-4 bg-dark-900 rounded-2xl border border-dark-700 flex items-center justify-between">
+                            <div>
+                                <h3 class="font-orbitron font-bold text-lg text-white">The Apex Titanium</h3>
+                                <p class="text-xs text-gray-400">RTX 4080 Super • Ryzen 7 7800X3D</p>
+                            </div>
+                            <span class="text-neon-cyan font-orbitron font-bold text-xl">$2,499</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="configurator" class="py-20 bg-dark-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-neon-cyan font-orbitron text-sm font-bold tracking-widest uppercase">Interactive Builder</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-black mt-3 mb-4">CUSTOM PC CONFIGURATOR</h2>
+                <p class="text-gray-400">Choose a pre-configured tier or customize your components below. Fully transparent pricing including parts and assembly.</p>
+            </div>
+
+            <!-- Tier Selection Tabs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12" id="tier-cards">
+                <div onclick="selectTier('budget')" id="tier-budget" class="cursor-pointer bg-dark-800 border-2 border-dark-600 rounded-2xl p-6 transition-all hover:border-neon-cyan relative">
+                    <div class="absolute top-4 right-4 text-xs bg-dark-700 px-3 py-1 rounded-full text-gray-300 font-semibold">Entry Tier</div>
+                    <h3 class="font-orbitron font-bold text-xl text-white mb-2">The Challenger</h3>
+                    <p class="text-gray-400 text-sm mb-4">1080p / 1440p high refresh rate gaming and smooth multitasking.</p>
+                    <div class="font-orbitron font-bold text-2xl text-neon-cyan mb-4">$999</div>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>CPU: Intel Core i5-13400F</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>GPU: NVIDIA RTX 4060 8GB</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>RAM: 16GB DDR5 5600MHz</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>Storage: 1TB NVMe Gen4 SSD</li>
+                    </ul>
+                    <button class="w-full py-2.5 rounded-xl bg-dark-700 hover:bg-neon-cyan hover:text-dark-900 font-bold transition-all text-sm">Select Tier</button>
+                </div>
+
+                <div onclick="selectTier('mid')" id="tier-mid" class="cursor-pointer bg-dark-800 border-2 border-neon-cyan rounded-2xl p-6 transition-all relative neon-border">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neon-cyan text-dark-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                        MOST POPULAR
+                    </div>
+                    <h3 class="font-orbitron font-bold text-xl text-white mb-2">The Apex Phantom</h3>
+                    <p class="text-gray-400 text-sm mb-4">Ultimate 1440p and solid 4K gaming with ray tracing enabled.</p>
+                    <div class="font-orbitron font-bold text-2xl text-neon-cyan mb-4">$1,699</div>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>CPU: AMD Ryzen 5 7600X</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>GPU: NVIDIA RTX 4070 Super 12GB</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>RAM: 32GB DDR5 6000MHz RGB</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>Storage: 2TB NVMe Gen4 SSD</li>
+                    </ul>
+                    <button class="w-full py-2.5 rounded-xl bg-neon-cyan text-dark-900 font-bold transition-all text-sm">Selected</button>
+                </div>
+
+                <div onclick="selectTier('enthusiast')" id="tier-enthusiast" class="cursor-pointer bg-dark-800 border-2 border-dark-600 rounded-2xl p-6 transition-all hover:border-neon-purple relative">
+                    <div class="absolute top-4 right-4 text-xs bg-purple-950 text-neon-purple px-3 py-1 rounded-full font-semibold">Enthusiast</div>
+                    <h3 class="font-orbitron font-bold text-xl text-white mb-2">The Apex Titanium</h3>
+                    <p class="text-gray-400 text-sm mb-4">Uncompromised 4K gaming, content creation, and heavy rendering.</p>
+                    <div class="font-orbitron font-bold text-2xl text-neon-purple mb-4">$2,499</div>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>CPU: AMD Ryzen 7 7800X3D</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>GPU: NVIDIA RTX 4080 Super 16GB</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>RAM: 32GB DDR5 6000MHz CL30</li>
+                        <li><i class="fa-solid fa-check text-neon-green mr-2"></i>Storage: 2TB High-Speed Gen4 SSD</li>
+                    </ul>
+                    <button class="w-full py-2.5 rounded-xl bg-dark-700 hover:bg-neon-purple hover:text-white font-bold transition-all text-sm">Select Tier</button>
+                </div>
+            </div>
+
+            <!-- Custom Component Builder & Breakdown Grid -->
+            <div class="grid lg:grid-cols-12 gap-8 bg-dark-900 border border-dark-700 rounded-3xl p-6 sm:p-8">
+                <!-- Customizer Form -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="font-orbitron font-bold text-xl text-white flex items-center">
+                        <i class="fa-solid fa-sliders text-neon-cyan mr-3"></i> Fine-Tune Your Build
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Processor (CPU)</label>
+                            <select id="select-cpu" onchange="calculatePrice()" class="w-full bg-dark-800 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none">
+                                <option value="220" data-cost="170">Intel Core i5-13400F ($220)</option>
+                                <option value="280" data-cost="210" selected>AMD Ryzen 5 7600X ($280)</option>
+                                <option value="420" data-cost="340">AMD Ryzen 7 7800X3D ($420)</option>
+                                <option value="590" data-cost="490">Intel Core i7-14700K ($590)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Graphics Card (GPU)</label>
+                            <select id="select-gpu" onchange="calculatePrice()" class="w-full bg-dark-800 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none">
+                                <option value="350" data-cost="280">NVIDIA RTX 4060 8GB ($350)</option>
+                                <option value="600" data-cost="490">AMD Radeon RX 7800 XT 16GB ($600)</option>
+                                <option value="820" data-cost="680" selected>NVIDIA RTX 4070 Super 12GB ($820)</option>
+                                <option value="1150" data-cost="980">NVIDIA RTX 4080 Super 16GB ($1,150)</option>
+                                <option value="1850" data-cost="1599">NVIDIA RTX 4090 24GB ($1,850)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Memory (RAM)</label>
+                            <select id="select-ram" onchange="calculatePrice()" class="w-full bg-dark-800 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none">
+                                <option value="80" data-cost="55">16GB DDR5 5600MHz ($80)</option>
+                                <option value="130" data-cost="90" selected>32GB DDR5 6000MHz RGB ($130)</option>
+                                <option value="240" data-cost="175">64GB DDR5 6000MHz RGB ($240)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Storage (NVMe SSD)</label>
+                            <select id="select-storage" onchange="calculatePrice()" class="w-full bg-dark-800 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none">
+                                <option value="75" data-cost="50">1TB Gen4 NVMe SSD ($75)</option>
+                                <option value="130" data-cost="95" selected>2TB Gen4 NVMe SSD ($130)</option>
+                                <option value="260" data-cost="195">4TB High-Speed Gen4 NVMe SSD ($260)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-2">Cooling & Case Aesthetics</label>
+                            <select id="select-cooling" onchange="calculatePrice()" class="w-full bg-dark-800 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none">
+                                <option value="120" data-cost="80">240mm AIO Liquid Cooler + Dual Chamber Case ($120)</option>
+                                <option value="180" data-cost="120" selected>360mm AIO Liquid Cooler + Panoramic Glass Case ($180)</option>
+                                <option value="280" data-cost="195">Custom RGB Fan Kit + Premium Display AIO ($280)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price & Profit Breakdown Card -->
+                <div class="lg:col-span-5 bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-orbitron font-bold text-lg text-white mb-4 pb-3 border-b border-dark-700">
+                            <i class="fa-solid fa-receipt text-neon-cyan mr-2"></i> Quote Summary
+                        </h3>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between text-gray-400">
+                                <span>Total Hardware Cost:</span>
+                                <span id="summary-hardware" class="text-white font-mono">$1,215</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span>Assembly & 24hr Testing Fee:</span>
+                                <span class="text-white font-mono">$175</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span>OS Installation & Stress Test:</span>
+                                <span class="text-white font-mono">Included</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span>Shop Consumables & Cables:</span>
+                                <span class="text-white font-mono">$25</span>
+                            </div>
+                        </div>
+
+                        <!-- Transparent Builder Breakdown (For Builder Insight) -->
+                        <div class="mt-6 p-4 bg-dark-900 rounded-xl border border-dark-700/80">
+                            <div class="flex items-center justify-between text-xs font-semibold uppercase text-neon-purple mb-2">
+                                <span><i class="fa-solid fa-chart-line mr-1"></i> Builder Margin View</span>
+                                <span id="summary-margin-pct">14.2% Margin</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>Estimated Net Profit:</span>
+                                <span id="summary-profit" class="text-neon-green font-mono font-bold">$230</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-sm font-semibold uppercase text-gray-300">Total Price:</span>
+                            <span id="summary-total" class="font-orbitron font-black text-3xl text-neon-cyan">$1,415</span>
+                        </div>
+                        <a href="#contact" onclick="populateOrderForm()" class="block w-full text-center bg-gradient-to-r from-neon-cyan to-blue-600 text-dark-900 font-bold py-4 rounded-xl shadow-lg hover:shadow-neon-cyan/50 transition-all text-base">
+                            Proceed to Order / Inquiry
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-neon-purple font-orbitron text-sm font-bold tracking-widest uppercase">Showroom</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-black mt-3 mb-4">RECENT BUILDS</h2>
+                <p class="text-gray-400">Every cable routed with surgical precision. Check out some of our custom rigs delivered to clients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden group hover:border-neon-cyan transition-all">
+                    <div class="relative overflow-hidden aspect-video">
+                        <img src="https://placehold.co/600x400/12141c/00f0ff?text=Cyan+Cyberpunk+Rig" alt="Build 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute bottom-3 left-3 text-xs bg-dark-900/80 backdrop-blur-md px-3 py-1 rounded-full text-neon-cyan font-semibold border border-dark-700">RTX 4090 • Custom Loop</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron font-bold text-lg text-white mb-1">Project Neon Vanguard</h3>
+                        <p class="text-xs text-gray-400 mb-4">Dual chamber glass case featuring custom rigid hardline tubing and synchronized ARGB lighting.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-dark-700">
+                            <span>Client: David L.</span>
+                            <span class="text-neon-cyan font-semibold">Delivered Locally</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden group hover:border-neon-purple transition-all">
+                    <div class="relative overflow-hidden aspect-video">
+                        <img src="https://placehold.co/600x400/12141c/b000ff?text=Stealth+Blackout+Rig" alt="Build 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute bottom-3 left-3 text-xs bg-dark-900/80 backdrop-blur-md px-3 py-1 rounded-full text-neon-purple font-semibold border border-dark-700">RTX 4080 Super • Zero RGB</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron font-bold text-lg text-white mb-1">The Obsidian Ghost</h3>
+                        <p class="text-xs text-gray-400 mb-4">Stealth zero-RGB professional workstation built for 4K video editing and quiet overnight renders.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-dark-700">
+                            <span>Client: Marcus K.</span>
+                            <span class="text-neon-purple font-semibold">Shipped Secured</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden group hover:border-neon-cyan transition-all">
+                    <div class="relative overflow-hidden aspect-video">
+                        <img src="https://placehold.co/600x400/12141c/00ff66?text=White+Snow+Edition" alt="Build 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute bottom-3 left-3 text-xs bg-dark-900/80 backdrop-blur-md px-3 py-1 rounded-full text-neon-green font-semibold border border-dark-700">RTX 4070 Ti • All White</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-orbitron font-bold text-lg text-white mb-1">Arctic Tempest</h3>
+                        <p class="text-xs text-gray-400 mb-4">All-white aesthetic build featuring custom braided cables and pristine component matching.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-dark-700">
+                            <span>Client: Sarah M.</span>
+                            <span class="text-neon-cyan font-semibold">Delivered Locally</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-20 bg-dark-800/50 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-neon-cyan font-orbitron text-sm font-bold tracking-widest uppercase">Quality Assurance</span>
+                <h2 class="text-3xl sm:text-5xl font-orbitron font-black mt-3 mb-4">THE APEX BUILD STANDARD</h2>
+                <p class="text-gray-400">We don't just throw parts in a box. Here is our rigorous 5-step assembly and testing workflow.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 relative">
+                    <div class="text-neon-cyan font-orbitron font-black text-4xl mb-4">01</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-2">Precision Assembly</h3>
+                    <p class="text-xs text-gray-400">Meticulous thermal paste application, anti-sag GPU mounting, and hidden cable routing behind dual chambers.</p>
+                </div>
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 relative">
+                    <div class="text-neon-cyan font-orbitron font-black text-4xl mb-4">02</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-2">BIOS & Firmware</h3>
+                    <p class="text-xs text-gray-400">Latest stable BIOS update, XMP/EXPO RAM profile tuning for max speed, and clean Windows installation.</p>
+                </div>
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 relative">
+                    <div class="text-neon-cyan font-orbitron font-black text-4xl mb-4">03</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-2">24hr Stress Testing</h3>
+                    <p class="text-xs text-gray-400">Running Cinebench, Prime95, and 3DMark loops to ensure zero thermal throttling or stability faults.</p>
+                </div>
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 relative">
+                    <div class="text-neon-cyan font-orbitron font-black text-4xl mb-4">04</div>
+                    <h3 class="font-orbitron font-bold text-lg text-white mb-2">Delivery & Support</h3>
+                    <p class="text-xs text-gray-400">Securely boxed with original component boxes included, backed by our 3-year labor warranty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 bg-dark-800 border border-dark-700 rounded-3xl p-8 sm:p-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-neon-cyan font-orbitron text-sm font-bold tracking-widest uppercase">Get in Touch</span>
+                    <h2 class="text-3xl font-orbitron font-black text-white">READY TO LEVEL UP YOUR SETUP?</h2>
+                    <p class="text-gray-400 text-sm">
+                        Submit your custom configuration or drop us a message with your budget and favorite games. We will get back to you within 24 hours with a personalized quote.
+                    </p>
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center space-x-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-xl bg-dark-900 border border-dark-600 flex items-center justify-center text-neon-cyan">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Location</div>
+                                <div class="font-semibold text-sm">Austin, TX (Local Pickup & US Shipping)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-gray-300">
+                            <div class="w-10 h-10 rounded-xl bg-dark-900 border border-dark-600 flex items-center justify-center text-neon-purple">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-400">Direct Contact</div>
+                                <div class="font-semibold text-sm">builds@apexrigs.example</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form onsubmit="submitOrder(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Your Name</label>
+                                <input type="text" id="form-name" required class="w-full bg-dark-900 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Email Address</label>
+                                <input type="email" id="form-email" required class="w-full bg-dark-900 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Delivery Preference</label>
+                            <select id="form-delivery" class="w-full bg-dark-900 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none">
+                                <option>Local Pickup & Live Benchmark Test (Austin, TX)</option>
+                                <option>Secured Nationwide Shipping (Double Boxed with Foam)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Build Configuration / Notes</label>
+                            <textarea id="form-notes" rows="4" class="w-full bg-dark-900 border border-dark-600 rounded-xl p-3 text-sm focus:border-neon-cyan focus:outline-none" placeholder="Paste your configuration summary or ask questions about specific games you want to run..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-neon-cyan to-blue-600 text-dark-900 font-bold py-4 rounded-xl shadow-lg hover:shadow-neon-cyan/50 transition-all text-base">
+                            Submit Build Inquiry
+                        </button>
+                    </form>
+                    <div id="success-message" class="hidden mt-4 p-4 bg-neon-green/10 border border-neon-green text-neon-green rounded-xl text-center text-sm font-semibold">
+                        <i class="fa-solid fa-circle-check mr-2"></i> Inquiry submitted successfully! We will email you within 24 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-dark-800/50 border-t border-dark-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-neon-purple font-orbitron text-sm font-bold tracking-widest uppercase">Support & Policies</span>
+                <h2 class="text-3xl sm:text-4xl font-orbitron font-black mt-3 mb-4">FREQUENTLY ASKED QUESTIONS</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6">
+                    <h3 class="font-orbitron font-bold text-white mb-2">What is your warranty policy?</h3>
+                    <p class="text-gray-400 text-sm">We provide a 3-year labor warranty covering assembly, cable routing, and stability troubleshooting. Individual parts (GPU, CPU, Motherboard) also carry their original manufacturer warranties ranging from 3 to 10 years.</p>
+                </div>
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6">
+                    <h3 class="font-orbitron font-bold text-white mb-2">Do you include original boxes and accessories?</h3>
+                    <p class="text-gray-400 text-sm">Yes! When you receive your PC, you will also receive a box containing all spare modular power supply cables, motherboard manuals, extra screws, and the original retail boxes for your components.</p>
+                </div>
+                <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6">
+                    <h3 class="font-orbitron font-bold text-white mb-2">How long does assembly and testing take?</h3>
+                    <p class="text-gray-400 text-sm">Standard builds take 3 to 5 business days from parts ordering to final stress testing and Windows 11 activation. We never ship a PC without completing 24 hours of benchmark stress tests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-900 border-t border-dark-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-xs">
+            <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+                <i class="fa-solid fa-microchip text-neon-cyan"></i>
+                <span class="font-orbitron font-bold text-white">APEX RIGS</span>
+                <span>© 2026 All Rights Reserved.</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#hero" class="hover:text-neon-cyan transition-colors">Privacy Policy</a>
+                <a href="#hero" class="hover:text-neon-cyan transition-colors">Terms of Service</a>
+                <a href="#hero" class="hover:text-neon-cyan transition-colors">Warranty Info</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectTier(tier) {
+            // Remove active styles from all tier cards
+            ['budget', 'mid', 'enthusiast'].forEach(t => {
+                const el = document.getElementById(`tier-${t}`);
+                el.classList.remove('border-neon-cyan', 'neon-border');
+                el.classList.add('border-dark-600');
+            });
+
+            // Highlight selected tier
+            const selectedEl = document.getElementById(`tier-${tier}`);
+            selectedEl.classList.remove('border-dark-600');
+            selectedEl.classList.add('border-neon-cyan', 'neon-border');
+
+            // Pre-fill dropdowns based on tier
+            if (tier === 'budget') {
+                document.getElementById('select-cpu').value = "220";
+                document.getElementById('select-gpu').value = "350";
+                document.getElementById('select-ram').value = "80";
+                document.getElementById('select-storage').value = "75";
+                document.getElementById('select-cooling').value = "120";
+            } else if (tier === 'mid') {
+                document.getElementById('select-cpu').value = "280";
+                document.getElementById('select-gpu').value = "820";
+                document.getElementById('select-ram').value = "130";
+                document.getElementById('select-storage').value = "130";
+                document.getElementById('select-cooling').value = "180";
+            } else if (tier === 'enthusiast') {
+                document.getElementById('select-cpu').value = "420";
+                document.getElementById('select-gpu').value = "1150";
+                document.getElementById('select-ram').value = "130";
+                document.getElementById('select-storage').value = "130";
+                document.getElementById('select-cooling').value = "280";
+            }
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const cpuEl = document.getElementById('select-cpu');
+            const gpuEl = document.getElementById('select-gpu');
+            const ramEl = document.getElementById('select-ram');
+            const storageEl = document.getElementById('select-storage');
+            const coolingEl = document.getElementById('select-cooling');
+
+            // Extract retail prices and underlying hardware costs
+            const cpuRetail = parseFloat(cpuEl.value);
+            const cpuCost = parseFloat(cpuEl.options[cpuEl.selectedIndex].getAttribute('data-cost'));
+
+            const gpuRetail = parseFloat(gpuEl.value);
+            const gpuCost = parseFloat(gpuEl.options[gpuEl.selectedIndex].getAttribute('data-cost'));
+
+            const ramRetail = parseFloat(ramEl.value);
+            const ramCost = parseFloat(ramEl.options[ramEl.selectedIndex].getAttribute('data-cost'));
+
+            const storageRetail = parseFloat(storageEl.value);
+            const storageCost = parseFloat(storageEl.options[storageEl.selectedIndex].getAttribute('data-cost'));
+
+            const coolingRetail = parseFloat(coolingEl.value);
+            const coolingCost = parseFloat(coolingEl.options[coolingEl.selectedIndex].getAttribute('data-cost'));
+
+            // Fixed fees
+            const laborFee = 175;
+            const consumablesCost = 25;
+
+            const totalHardwareRetail = cpuRetail + gpuRetail + ramRetail + storageRetail + coolingRetail;
+            const totalHardwareCost = cpuCost + gpuCost + ramCost + storageCost + coolingCost;
+
+            const finalPrice = totalHardwareRetail + laborFee + consumablesCost;
+            
+            // Profit calculation: (Labor + Markup on parts or direct markup)
+            // Here our labor fee ($175) + consumables buffer ($25) + component wholesale margin (~15%)
+            const componentWholesaleProfit = totalHardwareRetail - totalHardwareCost;
+            const totalNetProfit = laborFee + componentWholesaleProfit;
+            const marginPct = ((totalNetProfit / finalPrice) * 100).toFixed(1);
+
+            // Update UI
+            document.getElementById('summary-hardware').innerText = `$${totalHardwareRetail}`;
+            document.getElementById('summary-total').innerText = `$${finalPrice}`;
+            document.getElementById('summary-profit').innerText = `$${totalNetProfit}`;
+            document.getElementById('summary-margin-pct').innerText = `${marginPct}% Margin`;
+        }
+
+        function populateOrderForm() {
+            const total = document.getElementById('summary-total').innerText;
+            const cpu = document.getElementById('select-cpu').options[document.getElementById('select-cpu').selectedIndex].text;
+            const gpu = document.getElementById('select-gpu').options[document.getElementById('select-gpu').selectedIndex].text;
+            const ram = document.getElementById('select-ram').options[document.getElementById('select-ram').selectedIndex].text;
+            const storage = document.getElementById('select-storage').options[document.getElementById('select-storage').selectedIndex].text;
+            
+            document.getElementById('form-notes').value = `Custom Configuration Quote (${total}):\n- ${cpu}\n- ${gpu}\n- ${ram}\n- ${storage}`;
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            document.getElementById('success-message').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('success-message').classList.add('hidden');
+            }, 6000);
+        }
+
+        // Run initial calculation on load
+        window.onload = function() {
+            calculatePrice();
+        }
+    </script>
+</body>
+</html>
